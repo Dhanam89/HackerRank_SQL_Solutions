@@ -1,0 +1,15 @@
+SELECT
+  CASE
+    -- Check if it can form a triangle
+    WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+    
+    -- All sides equal
+    WHEN A = B AND B = C THEN 'Equilateral'
+    
+    -- Exactly two sides equal
+    WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+    
+    -- All sides different
+    ELSE 'Scalene'
+  END 
+FROM TRIANGLES;
